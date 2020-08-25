@@ -17,7 +17,7 @@ export default () => {
         <Route path="/rivojiddin" component={Rivojiddin} />
         <Route path="/hojiakbar" component={Hojiakbar} />
         <Route path="/habibullo" component={Habibullo} />
-        <Route path="/sardor" component={Sardor} />
+        <Route path="/" component={Sardor} />
       </Switch>
     </Router>
   )

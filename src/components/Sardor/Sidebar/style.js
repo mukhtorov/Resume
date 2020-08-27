@@ -6,7 +6,7 @@ flex-direction: column;
 width: 151px;
 height: 695px;
 background: #010000;
-padding: 27px 3px 0 22px;
+padding: 16px 3px 0 22px;
 `
 
 export const Title = styled.div`
@@ -15,8 +15,8 @@ font-style: normal;
 font-weight: bold;
 font-size: 16px;
 line-height: 19px;
-
 color: #FFFFFF;
+padding-top: 11px;
 `
 
 export const SubTitle = styled.div`
@@ -25,8 +25,8 @@ font-style: normal;
 font-weight: bold;
 font-size: 14px;
 line-height: 19px;
-
 color: #FFFFFF;
+padding-top: 9px;
 `
 
 export const Line = styled.div`

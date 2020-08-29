@@ -1,7 +1,8 @@
 import React from 'react'
-import { Container, Wrapper, Form, Input, LangContainer } from './style'
+import { Container, Wrapper, Div, DivContainer, Form, Input, LangContainer } from './style'
 import Sidebar from './Sidebar'
 import Body from './Body'
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,11 +12,18 @@ class App extends React.Component {
       emailTitle: '',
       lang: [
         {
+          id: 1,
           lang: "English",
           lev: "Native"
         },
         {
+          id: 2,
           lang: "Uzbek",
+          lev: "Native"
+        },
+        {
+          id: 3,
+          lang: "Kazak",
           lev: "Native"
         }
       ]
@@ -43,9 +51,9 @@ class App extends React.Component {
             {
               this.state.lang.map((lan) => {
                 return (
-                  <div style={{ display: 'flex', flexDirection: "column" }}>
-                    <Input placeholder="Language" onChange={(e) => this.setState({ contact: e.target.value })} />
-                    <Input placeholder="Level" onChange={(e) => this.setState({ contact: e.target.value })} />
+                  <div style={{ display: 'flex' }}>
+                    <Input placeholder="Language" value={lan.lang} onChange={(e) => this.setState({ contact: e.target.value })} />
+                    <Input placeholder="Level" value={lan.lev} onChange={(e) => this.setState({ contact: e.target.value })} />
                   </div>
                 )
               })
@@ -53,10 +61,61 @@ class App extends React.Component {
             <button onClick={() => this.Add()}>more lang</button>
           </LangContainer>
         </Form>
-
       </Wrapper>
     )
   }
 }
 
 export default App
+
+
+// import React from 'react'
+// import ReactDragListView from 'react-drag-listview';
+
+// class Demo extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     const data = [];
+//     for (let i = 1, len = 7; i < len; i++) {
+//       data.push({
+//         title: `rows${i}`
+//       });
+//     }
+
+//     this.state = {
+//       data
+//     };
+//   }
+
+//   render() {
+//     const that = this;
+//     const dragProps = {
+//       onDragEnd(fromIndex, toIndex) {
+//         const data = [...that.state.data];
+//         const item = data.splice(fromIndex, 1)[0];
+//         data.splice(toIndex, 0, item);
+//         that.setState({ data });
+//       },
+//       nodeSelector: 'li',
+//       handleSelector: 'Div'
+//     };
+
+//     return (
+//       <ReactDragListView {...dragProps}>
+//         {this.state.data.map((item, index) => (
+//           <li key={index} style={{ listStyleType: 'none' }}>
+//             <Div>
+//               {item.title}
+//             </Div>
+//           </li>
+//         ))}
+//       </ReactDragListView>
+//     );
+//   }
+// }
+
+
+// export default Demo
+
+

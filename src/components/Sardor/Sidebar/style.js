@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+// import { LangContainer } from '../style';
 
 export const Container = styled.div`
 display: flex;
@@ -42,4 +43,9 @@ font-weight: 300;
 font-size: 10px;
 line-height: 12px;
 color: #FFFFFF;
+`
+
+export const LangContainer = styled.div`
+display: flex;
+flex-direction: column;
 `

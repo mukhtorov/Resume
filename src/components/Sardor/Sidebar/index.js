@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Title, Line, Content, SubTitle } from './style'
+import { Container, Title, Line, Content, SubTitle, LangContainer } from './style'
 export default (props) => {
   return (
     <Container>
@@ -15,20 +15,23 @@ export default (props) => {
       <SubTitle>Phone</SubTitle>
       <Content>998 99 321 1226</Content>
       <Title>Skills</Title>
-      <button>more lang</button>
+      <Content>
+        HTML, CSS, Bootstrap, JavaScript, Reactjs, React-Natave, RestAPI, Apollo GraphQL, Redux, Angularjs, Nodejs, Expressjs, MongoDB, Docker, AWS, Cloudinary,
+      </Content>
+      <SubTitle>Language </SubTitle>
+      <Line />
       {
-        props.data.lang.map((lan) => {
+        props.data.lang.map((lan, index) => {
           return (
-            <div style={{ display: "flex", color: 'white' }}>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <h1>{lan.lang}</h1> <h3>{lan.lev}</h3>
-              </div>
-            </div>
+            <LangContainer key={lan.id}>
+              <SubTitle>{lan.lang}</SubTitle>
+              <Content>{lan.lev}</Content>
+            </LangContainer>
           )
         })
       }
-      <Line />
-      <Content>HTML, CSS, Bootstrap, JavaScript, Reactjs, React-Natave, RestAPI, Apollo GraphQL, Redux, Angularjs, Nodejs, Expressjs, MongoDB, Docker, AWS, Cloudinary,</Content>
+      }
+
     </Container>
   )
 }

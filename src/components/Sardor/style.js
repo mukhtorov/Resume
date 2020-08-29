@@ -40,5 +40,15 @@ margin: 10px;
 `
 export const LangContainer = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: space-around;
+`
+
+
+
+export const Div = styled.div`
+width: 90%;
+height: 40px;
+background: yellowgreen;
+margin: 10px;
 `

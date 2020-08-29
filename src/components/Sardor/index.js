@@ -11,10 +11,12 @@ class App extends React.Component {
       emailTitle: '',
       lang: [
         {
+          id: 1,
           lang: "English",
           lev: "Native"
         },
         {
+          id: 2,
           lang: "Uzbek",
           lev: "Native"
         }
@@ -29,6 +31,22 @@ class App extends React.Component {
       })
     })
   }
+
+
+  onChange=(e, id)=>{
+    const {target:{value}} = e;
+    this.setState((state) => {
+      const list = state.lang.map((item) => {
+        if(item.id == id){
+         item.lang = value;
+      }})
+      return {
+        list
+      }
+    }
+    )
+    console.log(this.state.lang)
+  }
   render() {
     return (
       <Wrapper>
@@ -41,12 +59,13 @@ class App extends React.Component {
           <Input placeholder="Contact" onChange={(e) => this.setState({ contact: e.target.value })} />
           <LangContainer>
             {
-              this.state.lang.map((lan) => {
-                return (
-                  <div style={{ display: 'flex', flexDirection: "column" }}>
-                    <Input placeholder="Language" onChange={(e) => this.setState({ contact: e.target.value })} />
-                    <Input placeholder="Level" onChange={(e) => this.setState({ contact: e.target.value })} />
-                  </div>
+              this.state.lang.map((lan, index)=>{
+                // console.log("lang", this.state.lang[index].lang)
+                return(
+                      <div style={{ display: 'flex', flexDirection: "column" }}>
+                        <Input placeholder="Level" onChange={(e)=>this.onChange(e,index)} />
+                      </div>
+
                 )
               })
             }

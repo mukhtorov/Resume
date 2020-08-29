@@ -32,10 +32,32 @@ class App extends React.Component {
   Add = (params) => {
     this.setState({
       lang: this.state.lang.concat({
+        id: this.state.lang.length + 1,
         lang: "",
         lev: ''
       })
     })
+  }
+
+
+  onChange = (e, id) => {
+    const { target: { value, name } } = e;
+    this.setState((state) => {
+      const list = state.lang.map((item) => {
+        if (item.id == id) {
+          if (name === 'lang') {
+            item.lang = value
+          }
+          if (name === 'lev') {
+            item.lev = value;
+          }
+        }
+      })
+      return {
+        list
+      }
+    }
+    )
   }
   render() {
     return (
@@ -49,11 +71,11 @@ class App extends React.Component {
           <Input placeholder="Contact" onChange={(e) => this.setState({ contact: e.target.value })} />
           <LangContainer>
             {
-              this.state.lang.map((lan) => {
+              this.state.lang.map((lan, index) => {
                 return (
                   <div style={{ display: 'flex' }}>
-                    <Input placeholder="Language" value={lan.lang} onChange={(e) => this.setState({ contact: e.target.value })} />
-                    <Input placeholder="Level" value={lan.lev} onChange={(e) => this.setState({ contact: e.target.value })} />
+                    <Input placeholder="Language" name="lang" value={lan.lang} onChange={(e) => this.onChange(e, index + 1)} />
+                    <Input placeholder="Level" name="lev" value={lan.lev} onChange={(e) => this.onChange(e, index + 1)} />
                   </div>
                 )
               })

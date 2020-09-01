@@ -1,32 +1,17 @@
 import React, { Component } from 'react'
-import { Container, Wrapper, Div, DivContainer, Form, Input, LangContainer } from './style'
+import { Container, Wrapper, Div, DivContainer, FormContainer, Left, Right, Input, LangContainer } from './style'
 import Sidebar from './Sidebar'
 import Body from './Body'
+import Nav from './Nav'
+import Form from './Form'
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contact: "",
       emailTitle: '',
-      lang: [
-        {
-          id: 1,
-          lang: "English",
-          lev: "Native"
-        },
-        {
-          id: 2,
-          lang: "Uzbek",
-          lev: "Native"
-        },
-        {
-          id: 3,
-          lang: "Kazak",
-          lev: "Native"
-        }
-      ]
+      lang: []
     }
   }
   Add = (params) => {
@@ -62,11 +47,18 @@ class App extends React.Component {
   render() {
     return (
       <Wrapper>
+        <Nav />
         <Container>
-          <Sidebar data={this.state} />
-          <Body />
+          <Left>
+            <Sidebar data={this.state} />
+            <Body />
+          </Left>
+          <Right>
+            <Form />
+          </Right>
         </Container>
-        {/* FORM */}
+        {/*
+        </Container>
         <Form>
           <Input placeholder="Contact" onChange={(e) => this.setState({ contact: e.target.value })} />
           <LangContainer>
@@ -82,62 +74,11 @@ class App extends React.Component {
             }
             <button onClick={() => this.Add()}>more lang</button>
           </LangContainer>
-        </Form>
+        </Form> */}
       </Wrapper>
     )
   }
 }
 
+
 export default App
-
-
-import React from 'react'
-import ReactDragListView from 'react-drag-listview';
-
-class Demo extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const data = [];
-    for (let i = 1, len = 7; i < len; i++) {
-      data.push({
-        title: `rows${i}`
-      });
-    }
-
-    this.state = {
-      data
-    };
-  }
-
-  render() {
-    const that = this;
-    const dragProps = {
-      onDragEnd(fromIndex, toIndex) {
-        const data = [...that.state.data];
-        const item = data.splice(fromIndex, 1)[0];
-        data.splice(toIndex, 0, item);
-        that.setState({ data });
-      },
-      nodeSelector: 'li',
-      handleSelector: 'Div'
-    };
-
-    return (
-      <ReactDragListView {...dragProps}>
-        {this.state.data.map((item, index) => (
-          <li key={index} style={{ listStyleType: 'none' }}>
-            <Div>
-              {item.title}
-            </Div>
-          </li>
-        ))}
-      </ReactDragListView>
-    );
-  }
-}
-
-
-export default Demo
-
-

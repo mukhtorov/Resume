@@ -2,22 +2,46 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
 display: flex;
-justify-content: space-evenly;
-
+flex-direction: column;
+width: 100%;
+box-sizing: border-box;
+background: #fff;
+overflow: hidden;
+height: 100vh;
 `
 
 export const Container = styled.div`
-/* padding: 10px; */
 display: flex;
-width: 545px;
+width: 100%;
 height: fit-content;
 background: #FFFFFF;
-border: 1px solid #000000;
 box-sizing: border-box;
 box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
 `
 
-export const Form = styled.div`
+export const Left = styled.div`
+display: flex;
+background: rgb(248, 249, 250);
+flex:1;
+padding: 30px 60px; 
+box-sizing: border-box;
+box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
+overflow-y: scroll;
+height: 100vh;
+`
+
+export const Right = styled.div`
+display: flex;
+justify-content: center;
+background: white;
+flex:1;
+height: 100vh;
+padding: 30px 60px; 
+overflow-y: scroll;
+
+`
+
+export const FormContainer = styled.div`
 /* padding: 10px; */
 display: flex;
 flex-direction: column;
@@ -37,6 +61,7 @@ height: 43px;
 font-size: 22px;
 padding-left: 15px;
 margin: 10px;
+box-sizing: border-box;
 `
 export const LangContainer = styled.div`
 display: flex;

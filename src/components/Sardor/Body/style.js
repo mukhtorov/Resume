@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import Sardor from '../../../assets/sardor.jpg'
+
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
 padding: 10px 25px 22px 10px;
+background: white;
+height: 695px;
+box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
 `
 
 export const Title = styled.div`

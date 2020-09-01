@@ -3,7 +3,7 @@ import { Container, Title, Line, Content, SubTitle, LangContainer } from './styl
 export default (props) => {
   return (
     <Container>
-      <Title>{props.data.contact}</Title>
+      <Title>Contacts</Title>
       <Line />
       <SubTitle>Email</SubTitle>
       <Content>sardor@gmail.com</Content>

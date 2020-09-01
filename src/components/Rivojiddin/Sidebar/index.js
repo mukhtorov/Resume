@@ -4,24 +4,24 @@ import {Title, Line, Subtitle, Content} from  './style'
 
 
 
-export default () => {
+export default (props) => {
   return (
     <Container>Sidebar
       <Title>Contacts</Title>
       <Line></Line>
       <Subtitle>Email</Subtitle>
-      <Content>mr.rivojidin@gmail.com</Content>
+      <Content>{props.email}</Content>
       <Subtitle>Address</Subtitle>
-      <Content>Turakurgan,Namangan city,Uzbekistan</Content>
+      <Content>{props.address}</Content>
       <Subtitle>Phone</Subtitle>
-      <Content>+998996160697</Content>
+      <Content>{props.number}</Content>
       <Subtitle>Version Control</Subtitle>
-      <Content><a href="https://github.com/din0497">GitHub.com</a></Content>
+      <Content><a href={props.link}>{props.link}</a></Content>
       <Title>Skills</Title>
       <Line/>
-      <Content>HTML, CSS, Bootstrap, JavaScript, Reactjs, React-Natave, RestAPI, Apollo GraphQL, Redux, Angularjs, Nodejs, Expressjs, MongoDB, Docker, AWS, Cloudinary,</Content>
+      <Content>{props.skills}</Content>
       <Subtitle>Learned in Unver</Subtitle>
-      <Content>C, C++, python, multimedia, datastructure</Content>
+      <Content>{props.added}</Content>
       <Title>Languages</Title>
       <Line></Line>
       <Title>Uzbek</Title>

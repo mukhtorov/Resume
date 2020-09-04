@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
 display:flex;
 flex-direction:column;
-position: absolute;
 box-sizing:border-box;
 width: 151px;
 height: 695px;
@@ -52,7 +51,33 @@ margin:5px 5px 0px 0;
 overflow-wrap: break-word0;
 color: #FFFFFF;
 `
+export const Content1 = styled.div`
+
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 10px;
+line-height: 12px;
+margin:5px 5px 0px 0;
+overflow-wrap: break-word0;
+color: #FFFFFF;
+`
 export const Content2 = styled.div`
+// position: absolute;
+width: 118px;
+height: 221px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 14px;
+margin-top:15px;
+
+color: #FFFFFF;
+`
+export const Content3 = styled.div`
 // position: absolute;
 // width: 118px;
 // height: 221px;
@@ -66,6 +91,35 @@ margin-top:15px;
 
 color: #FFFFFF;
 `
+export const Content4 = styled.div`
+// position: absolute;
+// width: 118px;
+// height: 221px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 14px;
+margin-top:15px;
+
+color: #FFFFFF;
+`
+export const Content5 = styled.div`
+// position: absolute;
+// width: 118px;
+// height: 221px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 14px;
+margin-top:2px;
+
+color: #FFFFFF;
+`
+
 export const Minititle = styled.div`
 // position: absolute;
 // width: 118px;
@@ -88,7 +142,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 16px;
 line-height: 19px;
-margin-top:6px;
+margin-top:12px;
 
 color: #FFFFFF;
 `

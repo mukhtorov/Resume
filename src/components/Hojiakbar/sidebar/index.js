@@ -1,32 +1,32 @@
 import React from 'react'
 import {Container} from './style'
-import {Title, Title1, Line, Content, Content2,} from './style'
+import {Title, Title1, Line, Content, Content1, Content2, Content3, Content4, Content5,} from './style'
 import {Minititle, Bigtitle} from './style'
 
-export default () => {
+export default (props) => {
   return (
     <Container>
-        <Title>Contacts</Title>
+        <Title>{props.contact}</Title>
         <Line />
-        <Title1>Address</Title1>
-        <Content>Uchkurgan, Namangan city, Uzbekistan(zip:160900)</Content>
+         <Title1>Address</Title1>
+        <Content>{props.address}</Content>
         <Title>Phone</Title>
-        <Content>+998936703572</Content>
+        <Content1>{props.number}</Content1>
         <Title>Virsion Control</Title>
-        <Content>https://github.com/abduvaxobovxojiakbar7007</Content>
+        <Content3>{props.git}</Content3>
         <Title>Skills</Title>
         <Line />
-        <Content2>HTML, CSS, Bootstrap, JavaScript, Reactjs, React-Natave,RestAPI, Apollo GraphQL, Redux, Angularjs, Nodejs, Expressjs, MongoDB, Docker, AWS, Cloudinary, xullas xammasi inshaolloh</Content2>
+         <Content2>{props.skills}</Content2>
         <Minititle>learned in Univ</Minititle>
-        <Content2>C, C++, python, multimedia, datastructure</Content2>
+        <Content4>C, C++, python, multimedia, datastructure</Content4>
         <Bigtitle>Languages</Bigtitle>
         <Line />
-        <Bigtitle>Uzbek</Bigtitle>|
-        <Content2>Native</Content2>
+        <Bigtitle>Uzbek</Bigtitle>
+        <Content5>Native</Content5>
         <Bigtitle>English</Bigtitle>
-        <Content2>Intermediate</Content2>
+        <Content5>Intermediate</Content5>
         <Bigtitle>Russian</Bigtitle>
-        <Content2>Intermediate</Content2>
+        <Content5>Intermediate</Content5>
 
 
         

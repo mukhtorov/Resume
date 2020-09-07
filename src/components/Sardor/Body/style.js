@@ -1,5 +1,13 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Sardor from '../../../assets/sardor.jpg'
+
+export const GeneralTitle = css`
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+`
 
 export const Container = styled.div`
 display: flex;
@@ -8,6 +16,8 @@ padding: 10px 25px 22px 10px;
 background: white;
 height: 695px;
 box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
+overflow: hidden;
+box-sizing: border-box;
 `
 
 export const Title = styled.div`
@@ -46,9 +56,9 @@ background-repeat: no-repeat;
 background-size: cover;
 min-width: 55px;
 height: 71px;
-border: 1px solid #000000;
 box-sizing: border-box;
 border-radius: 9px;
+box-shadow: rgb(217, 221, 224) 0px 0px 4px 0px;
 `
 export const Line = styled.div`
 border: 1px solid #C8C7C7;

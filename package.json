@@ -11,10 +11,12 @@
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.1",
-    "react-drag-listview": "^0.1.7",
+    "react-pdf": "^5.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "styled-components": "^5.1.1"
+    "react-step-wizard": "^5.3.4",
+    "styled-components": "^5.1.1",
+    "styled-icons": "^10.19.0"
   },
   "scripts": {
     "start": "react-scripts start",

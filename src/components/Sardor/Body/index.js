@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container, Title, Header, Line, Content, Img } from './style'
-
+import Experience from './Experience'
+import Education from './Education'
+import Projects from './Projects'
 export default () => {
   return (
     <Container>
@@ -13,6 +15,9 @@ export default () => {
         <Img />
       </Header>
       <Line />
+      <Experience />
+      <Education />
+      <Projects />
     </Container>
   )
 }

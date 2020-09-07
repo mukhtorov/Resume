@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Edit } from '@styled-icons/entypo/Edit'
+import { AutoDelete } from '@styled-icons/material-outlined/AutoDelete'
 
 export const Container = styled.div`
 display: flex;
@@ -28,6 +30,9 @@ padding: 13px 0;
 display: flex;
 justify-content: center;
 margin: 13px 0;
+:hover{
+  background: rgb(122,23,122)
+}
 `
 
 export const Share = styled.div`
@@ -35,6 +40,7 @@ font-family: Arial, Helvetica, sans-serif;
 font-weight: 600;
 font-size: 14px;
 color: #26a0f4;
+cursor: pointer;
 `
 
 export const Line = styled.div`
@@ -55,15 +61,26 @@ cursor: pointer;
 &:hover{
   box-shadow: #989898 0px 0px 4px 0px;
 }
-
 `
 
 export const Item = styled.div`
-
-
-
 `
 
 export const Icon = styled.div`
+display: flex;
 margin-left:auto;
+`
+export const DeleteIcon = styled(AutoDelete)`
+color: rgb(109, 114, 117);
+margin-right: 5px;
+:hover{
+  color: #26a0f4;
+}
+`
+
+export const EditIcon = styled(Edit)`
+color: rgb(109, 114, 117);
+:hover{
+  color: #26a0f4;
+}
 `

@@ -15,6 +15,7 @@ display: flex;
 width: 100%;
 height: fit-content;
 background: #FFFFFF;
+overflow: hidden;
 box-sizing: border-box;
 box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
 `
@@ -25,9 +26,8 @@ background: rgb(248, 249, 250);
 flex:1;
 padding: 30px 60px; 
 box-sizing: border-box;
-box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
 overflow-y: scroll;
-height: 100vh;
+height: 90vh;
 `
 
 export const Right = styled.div`
@@ -35,7 +35,7 @@ display: flex;
 justify-content: center;
 background: white;
 flex:1;
-height: 100vh;
+height: 75vh;
 padding: 30px 60px; 
 overflow-y: scroll;
 

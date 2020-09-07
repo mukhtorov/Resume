@@ -1,19 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Container, Wrapper, Div, DivContainer, FormContainer, Left, Right, Input, LangContainer } from './style'
 import Sidebar from './Sidebar'
 import Body from './Body'
 import Nav from './Nav'
-import Form from './Form'
-
+import Form from './Update/Form'
+import Skill from './Update/Skills'
+import Contact from './Update/Contact'
+import Language from './Update/Language'
+import Education from './Update/Education'
+import Experience from './Update/Experience'
+import Personal from './Update/Personal'
+import Projects from './Update/Projects'
+import StepWizard from 'react-step-wizard';
+import { useParams } from 'react-router-dom'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailTitle: '',
-      lang: []
+      step: 1,
+      email: 'example.com',
+      lang: [
+        {
+          lang: "Uzbek",
+          lev: "native"
+        },
+        {
+          lang: "English",
+          lev: "native"
+        },
+        {
+          lang: "Korean",
+          lev: "native"
+        }
+      ]
     }
   }
+
+
   Add = (params) => {
     this.setState({
       lang: this.state.lang.concat({
@@ -44,9 +68,16 @@ class App extends React.Component {
     }
     )
   }
+  onStepChange = (e) => {
+    console.log(e)
+    this.setState({
+      step: e
+    })
+  }
   render() {
+
     return (
-      <Wrapper>
+      <Wrapper >
         <Nav />
         <Container>
           <Left>
@@ -54,28 +85,23 @@ class App extends React.Component {
             <Body />
           </Left>
           <Right>
-            <Form />
+            <StepWizard initialStep={this.state.step}>
+              <Form goToStep={(e) => this.onStepChange(e)} />
+              <Personal goToStep={(e) => this.onStepChange(e)} />
+
+
+              <Contact onChange={(e) => console.log("input",
+                this.setState({ email: e }))} data={this.state.email}
+                goToStep={(e) => this.onStepChange(e)} />
+              <Skill goToStep={(e) => this.onStepChange(e)} />
+              <Language goToStep={(e) => this.onStepChange(e)} />
+              <Education goToStep={(e) => this.onStepChange(e)} />
+              <Experience goToStep={(e) => this.onStepChange(e)} />
+              <Projects goToStep={(e) => this.onStepChange(e)} />
+            </StepWizard>
           </Right>
         </Container>
-        {/*
-        </Container>
-        <Form>
-          <Input placeholder="Contact" onChange={(e) => this.setState({ contact: e.target.value })} />
-          <LangContainer>
-            {
-              this.state.lang.map((lan, index) => {
-                return (
-                  <div style={{ display: 'flex' }}>
-                    <Input placeholder="Language" name="lang" value={lan.lang} onChange={(e) => this.onChange(e, index + 1)} />
-                    <Input placeholder="Level" name="lev" value={lan.lev} onChange={(e) => this.onChange(e, index + 1)} />
-                  </div>
-                )
-              })
-            }
-            <button onClick={() => this.Add()}>more lang</button>
-          </LangContainer>
-        </Form> */}
-      </Wrapper>
+      </Wrapper >
     )
   }
 }

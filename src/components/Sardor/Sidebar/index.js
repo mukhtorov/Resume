@@ -6,7 +6,7 @@ export default (props) => {
       <Title>Contacts</Title>
       <Line />
       <SubTitle>Email</SubTitle>
-      <Content>sardor@gmail.com</Content>
+      <Content>{props.data.email}</Content>
       <SubTitle>Address</SubTitle>
       <Content>Uchkurgan city, Namangan Region, Uzbekistan</Content>
       <SubTitle>Virsion Control</SubTitle>
@@ -18,6 +18,8 @@ export default (props) => {
       <Content>
         HTML, CSS, Bootstrap, JavaScript, Reactjs, React-Natave, RestAPI, Apollo GraphQL, Redux, Angularjs, Nodejs, Expressjs, MongoDB, Docker, AWS, Cloudinary,
       </Content>
+      <SubTitle>Learned in Univ</SubTitle>
+      <Content>C, C++, python, multimedia, datastructure</Content>
       <SubTitle>Language </SubTitle>
       <Line />
       {

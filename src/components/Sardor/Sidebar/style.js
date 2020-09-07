@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-// import { LangContainer } from '../style';
 
 export const Container = styled.div`
 display: flex;
@@ -7,7 +6,9 @@ flex-direction: column;
 width: 151px;
 height: 695px;
 background: #010000;
-padding: 16px 3px 0 22px;
+padding: 16px 3px 0 16px;
+box-sizing: border-box;
+box-shadow: 0px 6px 12px rgba(73, 75, 116, 0.16);
 `
 
 export const Title = styled.div`
@@ -40,7 +41,7 @@ export const Content = styled.div`
 font-family: Roboto;
 font-style: normal;
 font-weight: 300;
-font-size: 10px;
+font-size: 12px;
 line-height: 12px;
 color: #FFFFFF;
 `
